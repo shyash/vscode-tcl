@@ -33,3 +33,6 @@ vsix: $(VSIX)
 
 test: out/%.js
 	npm test
+
+syntax: syntaxes/tcl.YAML-tmLanguage out/build.js
+	node out/build.js
