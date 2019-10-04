@@ -130,11 +130,11 @@
 					<key>applyEndPatternLast</key>
 					<integer>1</integer>
 					<key>begin</key>
-					<string>--\s*</string>
+					<string>--</string>
 					<key>comment</key>
 					<string>end of switches</string>
 					<key>end</key>
-					<string></string>
+					<string>\s</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -361,6 +361,10 @@
 							<key>include</key>
 							<string>#variable</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>#string</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>
@@ -390,7 +394,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#string</string>
+							<string>#inner-braces</string>
 						</dict>
 					</array>
 				</dict>
@@ -434,7 +438,7 @@
 		<key>numeric</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;![a-zA-Z])([+-]?([0-9]*[.])?[0-9]+f?)(?![\.a-zA-Z])</string>
+			<string>(?&lt;![a-zA-Z])([0-7][0-7][0-7]|0x[0-9a-fA-F]|[+-]?([0-9]*[.])?[0-9]+f?)(?![\.a-zA-Z])</string>
 			<key>name</key>
 			<string>constant.numeric.tcl</string>
 		</dict>
