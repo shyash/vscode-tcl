@@ -4,7 +4,7 @@
   - Syntax highlighting
   - Snippets
 
-If you run into any problems, please file an issue on [GitHub](https://github.com/sleutho/tcl).
+If you run into any problems, please file an issue on [GitHub](https://github.com/bitwisecook/vscode-tcl).
 
 ## Syntax highlighting
 ![Syntax highlighting](images/syntax-highlight.png)
