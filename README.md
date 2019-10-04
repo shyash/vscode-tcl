@@ -11,3 +11,6 @@ If you run into any problems, please file an issue on [GitHub](https://github.co
 
 ## Snippets
 ![Snippets](images/snippets.gif)
+
+## Code Formatting
+A simple code formatter
