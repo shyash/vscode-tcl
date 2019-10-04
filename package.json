@@ -2,9 +2,9 @@
 	"name": "tcl",
 	"displayName": "Tcl",
 	"description": "Tcl language support",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"publisher": "sleutho",
-	"icon": "images/Tcl-powered.svg",
+	"icon": "images/Tcl-powered.png",
 	"engines": {
 		"vscode": "^0.10.1"
 	},
