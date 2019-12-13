@@ -2,8 +2,16 @@
     "name": "tcl",
     "displayName": "Tcl",
     "description": "Tcl language support",
-    "version": "0.3.1",
+    "version": "0.3.3",
+    "keywords": [
+        "tcl",
+        "tk"
+    ],
     "publisher": "bitwisecook",
+    "bugs": {
+        "url": "https://github.com/bitwisecook/vscode-tcl/issues"
+    },
+    "license": "SEE LICENSE IN LICENSE.txt",
     "icon": "images/Tcl-powered.png",
     "engines": {
         "vscode": "^0.10.1"
@@ -18,10 +26,10 @@
         "Programming Languages",
         "Snippets"
     ],
-	"activationEvents": [
-		"onLanguage:tcl"
-	],
-	"main": "./out/client/extension.js",
+    "activationEvents": [
+        "onLanguage:tcl"
+    ],
+    "main": "./out/extension.js",
     "contributes": {
         "languages": [
             {
@@ -35,6 +43,13 @@
                     ".test"
                 ],
                 "configuration": "./language-configuration.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "tcl.escapeToQuotedTcl",
+                "title": "Escape Selections to Tcl Quoted String",
+                "category": "Tcl"
             }
         ],
         "grammars": [

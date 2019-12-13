@@ -14,3 +14,6 @@ If you run into any problems, please file an issue on [GitHub](https://github.co
 
 ## Code Formatting
 A simple code formatter
+
+## Tcl Helpers
+Added the "Tcl: Escape Selections to Tcl Quoted String" command to assist with pasting data into iRules.

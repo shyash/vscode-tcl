@@ -75,7 +75,22 @@ export function activate(context: vscode.ExtensionContext) {
             ];
         }
     });
+
+    context.subscriptions.push(vscode.commands.registerCommand("tcl.escapeToQuotedTcl", _ => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) {
+            return; // No open text editor
+        }
+
+        const selections: vscode.Selection[] = editor.selections;
+
+        editor.edit(builder => {
+            for (const selection of selections) {
+                builder.replace(selection, format.escapeToQuotedTcl(editor.document.getText(selection)));
+            }
+        });
+    }));
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
