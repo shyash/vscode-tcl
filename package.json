@@ -2,19 +2,19 @@
     "name": "tcl",
     "displayName": "Tcl",
     "description": "Tcl language support",
-    "version": "0.3.3",
+    "version": "0.4.0",
     "keywords": [
         "tcl",
         "tk"
     ],
     "publisher": "bitwisecook",
     "bugs": {
-        "url": "https://github.com/bitwisecook/vscode-tcl/issues"
+        "url": "https://github.com/bitwisecook/tcl.git/LICENSE"
     },
     "license": "SEE LICENSE IN LICENSE.txt",
     "icon": "images/Tcl-powered.png",
     "engines": {
-        "vscode": "^0.10.1"
+        "vscode": "^1.45.0"
     },
     "repository": {
         "type": "git",
@@ -56,7 +56,7 @@
             {
                 "language": "tcl",
                 "scopeName": "source.tcl",
-                "path": "./out/syntaxes/tcl.tmlanguage"
+                "path": "./out/syntaxes/tcl.json"
             }
         ],
         "snippets": [
@@ -68,19 +68,27 @@
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./ && node out/build.js",
+        "compile": "tsc -p ./ && npx js-yaml syntaxes/tcl.tmlanguage.yaml > out/syntaxes/tcl.json",
         "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "lint": "eslint src --ext ts",
+        "pretest": "npm run compile && npm run lint",
+        "test": "node ./out/test/runTest.js"
     },
     "devDependencies": {
-        "@types/mocha": "^2.2.48",
-        "@types/node": "^10.12.21",
-        "converter": "0.0.5",
-        "mocha": "^6.2.0",
-        "ts-node": "^8.4.1",
-        "tslint": "^5.12.1",
-        "typescript": "^3.3.1",
-        "vscode": "^1.1.28"
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^13.11.0",
+        "@types/vscode": "^1.45.0",
+        "@typescript-eslint/eslint-plugin": "^2.30.0",
+        "@typescript-eslint/parser": "^2.30.0",
+        "eslint": "^6.8.0",
+        "glob": "^7.1.6",
+        "mocha": "^7.1.2",
+        "typescript": "^3.8.3",
+        "vscode-test": "^1.3.0"
+    },
+    "dependencies": {
+        "js-yaml": "^3.14.0",
+        "yamljs": "^0.3.0"
     }
 }

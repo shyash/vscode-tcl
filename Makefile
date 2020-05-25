@@ -7,7 +7,7 @@ PKG_ID?=bitwisecook.$(BASENAME)
 node_modules/:
 	npm install
 
-out/%.js: src/%.ts node_modules/
+out/%.js: src/%.ts node_modules/ out/syntaxes
 	npm run compile
 
 clean:
@@ -34,5 +34,10 @@ vsix: $(VSIX)
 test: out/%.js
 	npm test
 
-syntax: syntaxes/tcl.YAML-tmLanguage out/build.js
-	node out/build.js
+out/syntaxes:
+	mkdir -p $@
+
+out/syntaxes/%.json: syntaxes/%.tmlanguage.yaml out/syntaxes
+	npx js-yaml $^ > $@
+
+syntax: out/syntaxes/irule.json
