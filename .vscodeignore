@@ -6,6 +6,7 @@ src/**
 vsc-extension-quickstart.md
 **/tsconfig.json
 **/tslint.json
+**/.eslintrc.js
 **/*.map
 **/*.ts
 syntaxes/**
@@ -13,3 +14,4 @@ Makefile
 .yo-rc.json
 tsconfig.tsbuildinfo
 src/build.ts
+.eslintrc.js
