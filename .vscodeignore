@@ -7,7 +7,6 @@ vsc-extension-quickstart.md
 **/tsconfig.json
 **/tslint.json
 **/.eslintrc.js
-**/*.map
 **/*.ts
 syntaxes/**
 Makefile
