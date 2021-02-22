@@ -138,5 +138,36 @@
 			"tk_messageBox ${-message msg}"
 		],
 		"description": "Message Box"
+	},
+	"dictionary foreach loop ": {
+		"prefix": "dictfor",
+		"body": [
+			"foreach ${1:key} [dict keys \\$${2:dictName}] {",
+			"    ${0:puts [dict get \\$${2:dictName} \\$${1:key}]}",
+			"}"
+		],
+		"description": "dictionary foreach loop "
+	},
+	"dictionary set key value pair": {
+		"prefix": "dictset",
+		"body": ["dict set ${1:dictName} ${2:key} ${3:value}"],
+		"description": "dictionary set key value pair"
+	},
+	"dictionary create": {
+		"prefix": "dictnew",
+		"body": [
+			"set ${1:dictName} [dict create ${2:key1} ${3:value1} ${0:${4:key2} ${5:value2}}]"
+		],
+		"description": "dictionary create"
+	},
+	"dictionary size": {
+		"prefix": "dictsz",
+		"body": ["dict size \\$${1:dictName}"],
+		"description": "dictionary size"
+	},
+	"dictionary replace": {
+		"prefix": "dictrep",
+		"body": ["dict set ${1:dictName} ${2:key} ${3:newValue}"],
+		"description": "dictionary replace"
 	}
 }
